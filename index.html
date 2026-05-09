@@ -1,155 +1,466 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>App del Clima - Chile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary bg-gradient">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">App Clima Chile</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./README.md"
+                >Sobre el proyecto</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap demo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/css/style.css">
-</head>
+    <div class="bg-secondary py-4">
+      <div class="container">
+        <header class="py-3 text-center text-white">
+          <h1 class="display-5">Clima en Ciudades de Chile</h1>
+          <p class="lead">Pronóstico para las 10 principales Ciudades</p>
+        </header>
 
-<body>
+        <!-- CONTENEDOR PRINCIPAL DE TARJETAS -->
+        <div id="tarjetas-clima-container" class="grid-container">
+          <!-- Tarjeta 1: Arica (ID 0) -->
+          <div class="city-card">
+            <img
+              class="card-bg-img"
+              src="./assets/img/dia soleado.jpeg"
+              alt="Arica"
+            />
+            <div class="card-overlay"></div>
+            <div class="card-body">
+              <div>
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="city-name">Arica</div>
+                    <div class="small opacity-75">📍 Chile</div>
+                  </div>
+                  <div class="clase-dia-badge">
+                    <i class="fas fa-sun"></i> Soleado
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <div class="temp-actual">22<small>°C</small></div>
+                  <div class="temp-range-btn mt-2">
+                    <span class="temp-max-val"
+                      ><i class="fas fa-arrow-up"></i> 25°</span
+                    >
+                    <span class="mx-2">|</span>
+                    <span class="temp-min-val"
+                      ><i class="fas fa-arrow-down"></i> 18°</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button class="btn-detalle btn-detalle-js w-100" data-id="0">
+                  Ver pronóstico 6 días
+                </button>
+              </div>
+            </div>
+          </div>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-danger">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./sobre-el-proyecto.html">Sobre el proyecto</a>
-          </li>
+          <!-- Tarjeta 2: Iquique (ID 1) -->
+          <div class="city-card">
+            <img
+              class="card-bg-img"
+              src="./assets/img/parcial_despejado.jpeg"
+              alt="Iquique"
+            />
+            <div class="card-overlay"></div>
+            <div class="card-body">
+              <div>
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="city-name">Iquique</div>
+                    <div class="small opacity-75">📍 Chile</div>
+                  </div>
+                  <div class="clase-dia-badge">
+                    <i class="fas fa-cloud-sun"></i> Parcial despejado
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <div class="temp-actual">20<small>°C</small></div>
+                  <div class="temp-range-btn mt-2">
+                    <span class="temp-max-val"
+                      ><i class="fas fa-arrow-up"></i> 23°</span
+                    >
+                    <span class="mx-2">|</span>
+                    <span class="temp-min-val"
+                      ><i class="fas fa-arrow-down"></i> 17°</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button class="btn-detalle btn-detalle-js w-100" data-id="1">
+                  Ver pronóstico 6 días
+                </button>
+              </div>
+            </div>
+          </div>
 
+          <!-- Tarjeta 3: Antofagasta (ID 2) -->
+          <div class="city-card">
+            <img
+              class="card-bg-img"
+              src="./assets/img/dia-nublado2.jpeg"
+              alt="Antofagasta"
+            />
+            <div class="card-overlay"></div>
+            <div class="card-body">
+              <div>
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="city-name">Antofagasta</div>
+                    <div class="small opacity-75">📍 Chile</div>
+                  </div>
+                  <div class="clase-dia-badge">
+                    <i class="fas fa-cloud"></i> Nublado
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <div class="temp-actual">18<small>°C</small></div>
+                  <div class="temp-range-btn mt-2">
+                    <span class="temp-max-val"
+                      ><i class="fas fa-arrow-up"></i> 21°</span
+                    >
+                    <span class="mx-2">|</span>
+                    <span class="temp-min-val"
+                      ><i class="fas fa-arrow-down"></i> 15°</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button class="btn-detalle btn-detalle-js w-100" data-id="2">
+                  Ver pronóstico 6 días
+                </button>
+              </div>
+            </div>
+          </div>
 
-        </ul>
+          <!-- Tarjeta 4: La Serena (ID 3) -->
+          <div class="city-card">
+            <img
+              class="card-bg-img"
+              src="/assets/img/parcial_despejado.jpeg"
+              alt="La Serena"
+            />
+            <div class="card-overlay"></div>
+            <div class="card-body">
+              <div>
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="city-name">Coquimbo</div>
+                    <div class="small opacity-75">📍 Chile</div>
+                  </div>
+                  <div class="clase-dia-badge">
+                    <i class="fas fa-cloud-sun"></i> Parcial despejado
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <div class="temp-actual">17<small>°C</small></div>
+                  <div class="temp-range-btn mt-2">
+                    <span class="temp-max-val"
+                      ><i class="fas fa-arrow-up"></i> 20°</span
+                    >
+                    <span class="mx-2">|</span>
+                    <span class="temp-min-val"
+                      ><i class="fas fa-arrow-down"></i> 12°</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button class="btn-detalle btn-detalle-js w-100" data-id="3">
+                  Ver pronóstico 6 días
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 5: Valparaíso (ID 4) -->
+          <div class="city-card">
+            <img
+              class="card-bg-img"
+              src="/assets/img/dia de viento.jpeg"
+              alt="Valparaíso"
+            />
+            <div class="card-overlay"></div>
+            <div class="card-body">
+              <div>
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="city-name">Valparaíso</div>
+                    <div class="small opacity-75">📍 Chile</div>
+                  </div>
+                  <div class="clase-dia-badge">
+                    <i class="fas fa-wind"></i> Viento
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <div class="temp-actual">16<small>°C</small></div>
+                  <div class="temp-range-btn mt-2">
+                    <span class="temp-max-val"
+                      ><i class="fas fa-arrow-up"></i> 19°</span
+                    >
+                    <span class="mx-2">|</span>
+                    <span class="temp-min-val"
+                      ><i class="fas fa-arrow-down"></i> 11°</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button class="btn-detalle btn-detalle-js w-100" data-id="4">
+                  Ver pronóstico 6 días
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 6: Santiago (ID 5) -->
+          <div class="city-card">
+            <img
+              class="card-bg-img"
+              src="/assets/img/dia soleado.jpeg"
+              alt="Santiago"
+            />
+            <div class="card-overlay"></div>
+            <div class="card-body">
+              <div>
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="city-name">Santiago</div>
+                    <div class="small opacity-75">📍 Chile</div>
+                  </div>
+                  <div class="clase-dia-badge">
+                    <i class="fas fa-sun"></i> Soleado
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <div class="temp-actual">25<small>°C</small></div>
+                  <div class="temp-range-btn mt-2">
+                    <span class="temp-max-val"
+                      ><i class="fas fa-arrow-up"></i> 28°</span
+                    >
+                    <span class="mx-2">|</span>
+                    <span class="temp-min-val"
+                      ><i class="fas fa-arrow-down"></i> 12°</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button class="btn-detalle btn-detalle-js w-100" data-id="5">
+                  Ver pronóstico 6 días
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 7: Rancagua (ID 6) -->
+          <div class="city-card">
+            <img
+              class="card-bg-img"
+              src="/assets/img/parcial_despejado.jpeg"
+              alt="Rancagua"
+            />
+            <div class="card-overlay"></div>
+            <div class="card-body">
+              <div>
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="city-name">Rancagua</div>
+                    <div class="small opacity-75">📍 Chile</div>
+                  </div>
+                  <div class="clase-dia-badge">
+                    <i class="fas fa-cloud-sun"></i> Parcial despejado
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <div class="temp-actual">23<small>°C</small></div>
+                  <div class="temp-range-btn mt-2">
+                    <span class="temp-max-val"
+                      ><i class="fas fa-arrow-up"></i> 26°</span
+                    >
+                    <span class="mx-2">|</span>
+                    <span class="temp-min-val"
+                      ><i class="fas fa-arrow-down"></i> 10°</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button class="btn-detalle btn-detalle-js w-100" data-id="6">
+                  Ver pronóstico 6 días
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 8: Concepción (ID 7) -->
+          <div class="city-card">
+            <img
+              class="card-bg-img"
+              src="/assets/img/lluvia.jpeg"
+              alt="Concepción"
+            />
+            <div class="card-overlay"></div>
+            <div class="card-body">
+              <div>
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="city-name">Concepción</div>
+                    <div class="small opacity-75">📍 Chile</div>
+                  </div>
+                  <div class="clase-dia-badge">
+                    <i class="fas fa-cloud-showers-heavy"></i> Lluvioso
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <div class="temp-actual">14<small>°C</small></div>
+                  <div class="temp-range-btn mt-2">
+                    <span class="temp-max-val"
+                      ><i class="fas fa-arrow-up"></i> 17°</span
+                    >
+                    <span class="mx-2">|</span>
+                    <span class="temp-min-val"
+                      ><i class="fas fa-arrow-down"></i> 9°</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button class="btn-detalle btn-detalle-js w-100" data-id="7">
+                  Ver pronóstico 6 días
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 9: Temuco (ID 8) -->
+          <div class="city-card">
+            <img
+              class="card-bg-img"
+              src="/assets/img/tormenta_electrica.jpeg"
+              alt="Temuco"
+            />
+            <div class="card-overlay"></div>
+            <div class="card-body">
+              <div>
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="city-name">Temuco</div>
+                    <div class="small opacity-75">📍 Chile</div>
+                  </div>
+                  <div class="clase-dia-badge">
+                    <i class="fas fa-bolt"></i> Tormenta eléctrica
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <div class="temp-actual">12<small>°C</small></div>
+                  <div class="temp-range-btn mt-2">
+                    <span class="temp-max-val"
+                      ><i class="fas fa-arrow-up"></i> 15°</span
+                    >
+                    <span class="mx-2">|</span>
+                    <span class="temp-min-val"
+                      ><i class="fas fa-arrow-down"></i> 6°</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button class="btn-detalle btn-detalle-js w-100" data-id="8">
+                  Ver pronóstico 6 días
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 10: Puerto Montt (ID 9) -->
+          <div class="city-card">
+            <img
+              class="card-bg-img"
+              src="/assets/img/lluvia.jpeg"
+              alt="Puerto Montt"
+            />
+            <div class="card-overlay"></div>
+            <div class="card-body">
+              <div>
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="city-name">Puerto Montt</div>
+                    <div class="small opacity-75">📍 Chile</div>
+                  </div>
+                  <div class="clase-dia-badge">
+                    <i class="fas fa-cloud-showers-heavy"></i> Lluvioso
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <div class="temp-actual">10<small>°C</small></div>
+                  <div class="temp-range-btn mt-2">
+                    <span class="temp-max-val"
+                      ><i class="fas fa-arrow-up"></i> 13°</span
+                    >
+                    <span class="mx-2">|</span>
+                    <span class="temp-min-val"
+                      ><i class="fas fa-arrow-down"></i> 5°</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button class="btn-detalle btn-detalle-js w-100" data-id="9">
+                  Ver pronóstico 6 días
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
 
+    <footer class="bg-dark mt-auto">
+      <p class="text-white text-center p-3 mb-0">
+        © 2024 - App del Clima Chile
+      </p>
+    </footer>
 
-  <div class="container bg-secondary">
-
-    <header class="py-5">
-      <h1 class="fs-1">Inicio</h1>
-    </header>
-
-
-    <main class="row">
-
-      <div class="col-12 col-sm-6 col-md-4">
-        <div class="card m-2">
-          <div class="card-body text-center">
-            <p class="fs-1">☀️</p>
-            <h5 class="card-title">Localidad</h5>
-            <span class="badge text-bg-warning">20°</span>            
-            <a href="#" class="btn btn-dev1">ver más</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-12 col-sm-6 col-md-4">
-        <div class="card m-2">
-          <div class="card-body text-center">
-            <img class="w-25" src="./assets/img/image.png" alt="">
-            <h5 class="card-title">Localidad</h5>
-            <span class="badge text-bg-warning">20°</span>            
-            <a href="#" class="btn btn-dev1">ver más</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4">
-        <div class="card m-2">
-          <div class="card-body text-center">
-            <p>☀️</p>
-            <h5 class="card-title">Localidad</h5>
-            <span class="badge text-bg-warning">20°</span>            
-            <a href="#" class="btn btn-dev1">ver más</a>
-          </div>
-        </div>
-      </div>
-
-
-
-          <div class="col-12 col-sm-6 col-md-4">
-        <div class="card m-2">
-          <div class="card-body text-center">
-            <p>☀️</p>
-            <h5 class="card-title">Localidad</h5>
-            <h6>20°</h6>
-            <a href="#" class="btn btn-dev1">ver más</a>
-          </div>
-        </div>
-      </div>
-
-
-           <div class="col-12 col-sm-6 col-md-4">
-        <div class="card m-2">
-          <div class="card-body text-center">
-            <p>☀️</p>
-            <h5 class="card-title">Localidad</h5>
-            <h6>20°</h6>
-            <a href="#" class="btn btn-dev1">ver más</a>
-          </div>
-        </div>
-      </div>
-
-
-        <div class="col-12 col-sm-6 col-md-4">
-        <div class="card m-2">
-          <div class="card-body text-center">
-            <p>☀️</p>
-            <h5 class="card-title">Localidad</h5>
-            <h6>20°</h6>
-            <a href="#" class="btn btn-dev1">ver más</a>
-          </div>
-        </div>
-      </div>
-
-
-           <div class="col-12 col-sm-6 col-md-4">
-        <div class="card m-2">
-          <div class="card-body text-center">
-            <p>☀️</p>
-            <h5 class="card-title">Localidad</h5>
-            <h6>20°</h6>
-            <a href="#" class="btn btn-dev1">ver más</a>
-          </div>
-        </div>
-      </div>
-
-           <div class="col-12 col-sm-6 col-md-4">
-        <div class="card m-2">
-          <div class="card-body text-center">
-            <p>☀️</p>
-            <h5 class="card-title">Localidad</h5>
-            <h6>20°</h6>
-            <a href="#" class="btn btn-dev1">ver más</a>
-          </div>
-        </div>
-      </div>
-
-    </main>
-
-
-  </div>
-
-  <footer class="bg-dark">
-    <p class="text-white text-center p-2">pie de pagina</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/datos.js"></script>
+    <script src="assets/js/index.js"></script>
+  </body>
 </html>
