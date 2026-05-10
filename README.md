@@ -1,5 +1,5 @@
 Este archivo `README.md` completo incluye:
-https://github.com/NelDurv/app-clima.git
+https://github.com/NelDurv/App-Clima-v-1.git
 
 - Vista previa ASCII de la aplicación
 - Todos los errores comunes con capturas textuales
