@@ -1,0 +1,12 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.bg-secondary {
+    @include m.gradient(v.$primary-gradient-start, v.$primary-gradient-end);
+    min-height: 100vh;
+}
+
+.small.opacity-75 {
+    font-size: 0.9rem;
+    color: v.$text-muted;
+}

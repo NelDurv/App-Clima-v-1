@@ -1,0 +1,60 @@
+// ===== COLORES =====
+$primary-gradient-start: #394783;
+$primary-gradient-end: #94b7eb;
+$secondary-gradient-start: #c55326;
+$secondary-gradient-end: #764ba2;
+
+$card-overlay-start: rgba(0, 0, 0, 0.2);
+$card-overlay-end: rgba(0, 0, 0, 0.7);
+$card-overlay-hover-end: rgba(0, 0, 0, 0.8);
+
+$forecast-gradient-start: #3f8ee9;
+$forecast-gradient-end: #b2ca2c;
+
+$text-light: #ffffff;
+$text-dark: #333333;
+$text-muted: #e0e0e0;
+
+$temp-max-color: #ff6b6b;
+$temp-min-color: #4dabf7;
+$temp-max-dark: hwb(6 2% 3%);
+$temp-min-dark: #2c0bec;
+
+$btn-primary-bg: #62e9c2;
+$btn-primary-border: #0c770c;
+$btn-primary-hover-bg: #08936c;
+$btn-primary-hover-border: #084108;
+
+$btn-detalle-bg: #d3b7f7;
+$btn-detalle-hover-bg: #c2e4ee;
+
+$spinner-color: #007bff;
+$alert-warning-bg: #fff3cd;
+$alert-danger-bg: #f8d7da;
+
+// ===== TAMAÑOS =====
+$border-radius-sm: 12px;
+$border-radius-md: 15px;
+$border-radius-lg: 20px;
+$border-radius-xl: 25px;
+
+$container-padding: 3rem;
+$container-padding-mobile: 0.5rem;
+
+$card-min-height: 380px;
+$forecast-card-padding: 20px 12px;
+
+// ===== BREAKPOINTS =====
+$breakpoint-mobile: 420px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-desktop-lg: 1200px;
+
+// ===== FONT FAMILIES =====
+$font-title: 'Times New Roman', Times, serif;
+$font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+// ===== TRANSITIONS =====
+$transition-default: all 0.3s ease;
+$transition-bounce: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$transition-slide: left 0.3s ease;

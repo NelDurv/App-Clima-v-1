@@ -1,0 +1,50 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.btn-detalle {
+    background-color: v.$btn-detalle-bg;
+    color: v.$text-dark;
+    border: none;
+    border-radius: v.$border-radius-xl;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    width: 100%;
+    cursor: pointer;
+    transition: v.$transition-bounce;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+        background-color: v.$btn-detalle-hover-bg;
+        transform: scale(1.03) translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+        letter-spacing: 0.5px;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.btn-secondary {
+    @include m.gradient(v.$secondary-gradient-start, v.$secondary-gradient-end);
+    border: none;
+    transition: v.$transition-default;
+
+    &:hover {
+        transform: translateX(-5px);
+        @include m.gradient(#5a67d8, #6b46a0);
+    }
+}
+
+.btn-dev1 {
+    background-color: v.$btn-primary-bg;
+    border: 4px solid v.$btn-primary-border;
+    border-radius: 16px;
+    color: #13453c;
+
+    &:hover {
+        background-color: v.$btn-primary-hover-bg;
+        border-color: v.$btn-primary-hover-border;
+    }
+}

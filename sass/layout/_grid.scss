@@ -1,0 +1,28 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.grid-container {
+    background-color: #626ea0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    border-radius: v.$border-radius-lg;
+    padding: v.$container-padding;
+
+    @include m.respond-to(mobile) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.respond-to(desktop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include m.respond-to(desktop-lg) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include m.respond-to(mobile-only) {
+        gap: 1rem;
+        padding: v.$container-padding-mobile;
+    }
+}

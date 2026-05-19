@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.bg-light {
+    @include m.gradient(#7088f0, #0c113f);
+    min-height: 100vh;
+}
+
+.container.py-4 {
+    background: rgba(127, 144, 238, 0.95);
+    border-radius: v.$border-radius-lg;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 20px 40px rgba(87, 2, 2, 0.1);
+}
+
+#modalCiudadNombre {
+    @include m.gradient-text(#1d0992, #3844f3);
+    font-weight: bold;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: v.$spinner-color;
+}
+
+.alert {
+    border-radius: v.$border-radius-md;
+}

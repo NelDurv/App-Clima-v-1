@@ -1,0 +1,117 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.forecast-card {
+    @include m.gradient(v.$forecast-gradient-start, v.$forecast-gradient-end);
+    border-radius: v.$border-radius-lg;
+    padding: v.$forecast-card-padding;
+    text-align: center;
+    transition: v.$transition-default;
+    cursor: pointer;
+    border: 3px solid rgba(18, 223, 46, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    @include m.fade-in();
+
+    // Barra superior animada
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 8px;
+        @include m.gradient(#3007e7, #30bcd4, 90deg);
+        transition: v.$transition-slide;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        border-color: rgba(48, 219, 211, 0.3);
+
+        &::before {
+            left: 0;
+        }
+
+        i {
+            transform: scale(1.1);
+        }
+    }
+
+    i {
+        font-size: 3rem;
+        margin: 15px 0;
+        color: #101ee4;
+        transition: transform 0.3s ease;
+    }
+
+    .day-name,
+    .fw-bold {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #00050a;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+
+    .date,
+    .small.text-muted {
+        font-size: 1rem;
+        color: #011113;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .temp-max,
+    .text-danger {
+        color: v.$temp-max-dark;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+
+    .temp-min,
+    .text-primary {
+        color: v.$temp-min-dark !important;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+
+    .climate-type,
+    .small.text-muted.mt-2 {
+        font-size: 1.5rem;
+        color: #111111;
+        font-weight: bold;
+        margin-top: 10px;
+        padding-top: 8px;
+        border-top: 3px dashed #111111;
+    }
+}
+
+// Delays escalonados para tarjetas
+.forecast-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.forecast-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.forecast-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.forecast-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.forecast-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.forecast-card:nth-child(6) {
+    animation-delay: 0.6s;
+}

@@ -1,0 +1,43 @@
+// ===== 1. Abstracts =====
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+
+// ===== 2. Base =====
+@use 'base/reset';
+@use 'base/typography';
+
+// ===== 3. Layout =====
+@use 'layout/grid';
+@use 'layout/footer';
+
+// ===== 4. Components =====
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/badges';
+@use 'components/forecast';
+
+// ===== 5. Pages =====
+@use 'pages/home';
+@use 'pages/detail';
+
+// ===== 6. Animaciones globales =====
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// ===== 7. Utilidades adicionales =====
+.w-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}

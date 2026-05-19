@@ -1,0 +1,69 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.city-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border-radius: v.$border-radius-md;
+    color: v.$text-light;
+    min-height: v.$card-min-height;
+    height: 100%;
+
+    &:hover .card-overlay {
+        @include m.card-overlay(v.$card-overlay-start, v.$card-overlay-hover-end);
+    }
+}
+
+.card-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.card-overlay {
+    @include m.card-overlay(v.$card-overlay-start, v.$card-overlay-end);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+}
+
+.mt-4 {
+    margin-top: auto !important;
+}
+
+.temp-range-btn {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #eeeff3;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: v.$border-radius-sm;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    display: inline-block;
+    cursor: default;
+
+    i {
+        margin-right: 3px;
+    }
+}
+
+.temp-max-val {
+    color: v.$temp-max-color;
+    font-weight: bold;
+}
+
+.temp-min-val {
+    color: v.$temp-min-color;
+    font-weight: bold;
+}
