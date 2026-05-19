@@ -1,0 +1,69 @@
+@use './variables' as v;
+
+// Mixin para gradientes lineales
+@mixin gradient($start, $end, $direction: 135deg) {
+    background: linear-gradient($direction, $start, $end);
+}
+
+// Mixin para texto con gradiente
+@mixin gradient-text($start, $end, $direction: 135deg) {
+    background: linear-gradient($direction, $start, $end);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+// Mixin para card overlay
+@mixin card-overlay($start, $end) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, $start, $end);
+    z-index: 2;
+}
+
+// Mixin para responsive breakpoints
+@mixin respond-to($breakpoint) {
+    @if $breakpoint ==mobile {
+        @media (min-width: v.$breakpoint-mobile) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==tablet {
+        @media (min-width: v.$breakpoint-tablet) and (max-width: v.$breakpoint-desktop) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==desktop {
+        @media (min-width: v.$breakpoint-desktop) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==desktop-lg {
+        @media (min-width: v.$breakpoint-desktop-lg) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==mobile-only {
+        @media (max-width: v.$breakpoint-tablet) {
+            @content;
+        }
+    }
+}
+
+// Mixin para animaciones fade-in con delay
+@mixin fade-in($delay: 0s) {
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: $delay;
+}
+
+// Mixin para backdrop blur
+@mixin backdrop-blur($blur: 5px) {
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
