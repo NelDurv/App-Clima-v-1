@@ -66,4 +66,4 @@
 // Mixin para backdrop blur
 @mixin backdrop-blur($blur: 5px) {
     backdrop-filter: blur($blur);
-    -webkit-backdrop-filter: blur($blur);
+    -webkit-backdrop-filter:blur($blur);}
