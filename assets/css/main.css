@@ -1,0 +1,19 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 12 | /     @include m.respond-to(mobile) {
+ * 13 | |         grid-template-columns: repeat(2, 1fr);
+ * 14 | \     }
+ *    '
+ *   sass\layout\_grid.scss 12:5  @use
+ *   sass\main.scss 10:1          root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 12 \2502  \250c      @include m.respond-to(mobile) {\a 13 \2502  \2502          grid-template-columns: repeat(2, 1fr);\a 14 \2502  \2514      }\a    \2575 \a   sass\\layout\\_grid.scss 12:5  @use\a   sass\\main.scss 10:1          root stylesheet";
+}
